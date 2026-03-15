@@ -1,0 +1,17 @@
+name: Synthetic Test
+on:
+  push:
+    branches:
+      - "**"
+      - "!main"
+jobs:
+  test:
+    name: Run Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v2.1.5
+        with:
+          node-version: "16"
+      - name: Test
+        run: yarn ci:install && yarn ci:test

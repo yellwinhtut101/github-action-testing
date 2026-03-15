@@ -1,0 +1,12 @@
+{
+  "name": "sample-app",
+  "scripts": {
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "ci:test": "yarn format:check",
+    "ci:install": "yarn install --frozen-lockfile"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0"
+  }
+}
