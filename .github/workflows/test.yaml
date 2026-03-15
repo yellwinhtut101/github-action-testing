@@ -2,8 +2,8 @@ name: Synthetic Test
 on:
   push:
     branches:
-      - "**"
-      - "!main"
+    - "**"
+    - "!main"
 jobs:
   test:
     name: Run Test
