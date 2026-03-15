@@ -16,7 +16,7 @@ jobs:
         run: |
           docker build -t yellwinhtut/sample-app:${{ github.sha }} .
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@latest
+        uses: aquasecurity/trivy-action@0.69.2
         with:
           image-ref: "yellwinhtut/sample-app:${{ github.sha }}"
           format: "table"
