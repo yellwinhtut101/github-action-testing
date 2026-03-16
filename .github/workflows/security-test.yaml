@@ -1,0 +1,27 @@
+name: Image Security Test
+run-name: Image Security Test
+on:
+  push:
+    branches:
+      - "**"
+      - "!main"
+
+jobs:
+  security-test:
+    name: Run image Security Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Build image
+        run: |
+          docker build -t yellwinhtut/sample-app:${{ github.sha }} .
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@0.34.2
+        with:
+          image-ref: "yellwinhtut/sample-app:${{ github.sha }}"
+          format: "table"
+          exit-code: "1"
+          ignore-unfixed: true
+          vuln-type: "os,library"
+          severity: "CRITICAL"
