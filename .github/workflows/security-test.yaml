@@ -18,7 +18,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.34.2
         with:
-          args: '--skip-version-check'
+          args: "--skip-version-check"
           image-ref: "yellwinhtut/sample-app:${{ github.sha }}"
           format: "table"
           exit-code: "1"
