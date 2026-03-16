@@ -1,4 +1,4 @@
-FROM node:25
+FROM node:24.14.0
 WORKDIR /app
 COPY package*.json ./
 RUN yarn install --frozen-lockfile
