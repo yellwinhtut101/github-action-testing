@@ -1,4 +1,4 @@
-FROM node:24.14.0
+FROM node:25.8.1
 WORKDIR /app
 COPY package*.json ./
 RUN apt update && apt upgrade -y
