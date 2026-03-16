@@ -1,6 +1,7 @@
 FROM node:24.14.0
 WORKDIR /app
 COPY package*.json ./
+RUN apt update && apt upgrade -y
 RUN yarn install --frozen-lockfile
 COPY . .
 EXPOSE 3000
