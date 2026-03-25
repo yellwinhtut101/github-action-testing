@@ -5,7 +5,6 @@ on:
     branches:
       - "**"
       - "!main"
-
 jobs:
   security-test:
     name: Run image Security Test
@@ -17,7 +16,7 @@ jobs:
         run: |
           docker build -t yellwinhtut/sample-app:${{ github.sha }} .
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@0.34.2
+        uses: aquasecurity/trivy-action@0.35.0
         with:
           image-ref: "yellwinhtut/sample-app:${{ github.sha }}"
           format: "table"
