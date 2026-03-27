@@ -1,6 +1,5 @@
 name: Build image
 run-name: Build image
-
 on:
   push:
     branches:
